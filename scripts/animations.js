@@ -7,6 +7,8 @@ window.onload = function () {
     var counter = 0;
     var exploreBtn = document.getElementById('explore-button');
     var firstSection = document.getElementById('first-section');
+    var thirdSection = document.getElementById('third-section');
+    var video = document.getElementById('mic-video');
     canvas.width = col.scrollWidth - 24;
     canvas.height = col.scrollHeight;
 
@@ -158,10 +160,15 @@ window.onload = function () {
         drawPelicularEffect();
         drawRectangles();
         drawText();
-
     }
 
-    draw();
+    function parralax(elem){
+        if(elem){
+            elem.style.transform = 'translate3d(-50%, ' + 0.4 * (window.innerHeight - thirdSection.getBoundingClientRect().bottom*1.2) + 'px, 0)';
+        }
+    }
+
+    
 
     window.addEventListener('resize', () => {
         canvas.width = col.scrollWidth;
@@ -171,4 +178,10 @@ window.onload = function () {
     exploreBtn.addEventListener('click', () => {
         firstSection.scrollIntoView();
     })
+
+    window.onscroll = () => {
+        parralax(video);
+    }
+
+    draw();
 }
