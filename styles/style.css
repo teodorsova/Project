@@ -1,6 +1,7 @@
 /*html, body*/
 html{
     background-color: #A98743;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -68,15 +69,69 @@ body{
     border-radius: 30px;
     border: solid 1px #EEEBD3;
     background-color: #255957;
-    color: #EEEBD3;
+    color: whitesmoke;
     font-size: large;
     padding: 7px 20px;
+}
+
+.home-button:hover{
+  opacity: 70%;
+}
+
+.home-video{
+  opacity: 50%;
+  position: absolute;
+  z-index: 0;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 960px) {
+.video-container{
+  width: 100%;
+  height: 40vw;
+  z-index: 0;
+  position: relative;
+  
+}
+
+.on-top-of-video-container{
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  top:30%;
+}
+}
+@media only screen and (min-width: 960px) {
+.video-container{
+  width: 100%;
+  height: 40vh;
+  z-index: 0;
+  position: relative;
+  
+}
+
+.on-top-of-video-container{
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  top:40%;
+}
+}
+
+
+
+.overlay{
+  position: relative;
+  z-index: 2;
+  color:white;
+  font-weight: bolder;
+
 }
 
 
 #showcase-title{
     padding-top: 5vh;
     padding-bottom: 5vh;
+    color:whitesmoke;
 }
 
 #calendar-title{
@@ -86,12 +141,23 @@ body{
     color:#EEEBD3;
 }
 
+#try-title{
+  color: black;
+  font-weight: bold;
+}
+
 #calendar-month{
   font-weight: bold;
   font-size: 3vh;
 
 }
 
+#showcase-title-row{
+  background-color: #255957;
+}
+#showcase-content-row{
+  background-color: black;
+}
 #calendar-year{
   font-weight: bold;
   font-size: 2.5vh;
@@ -101,6 +167,19 @@ body{
   background: #20c997;
 }
 
+#left-card, #right-card{
+  background-color: #437C90;
+  color:whitesmoke;
+}
+
+#second-section{
+  background-color:#F7C548;
+}
+
+#third-section{
+  height: 50%;
+  overflow: hidden;
+}
 
 
 /* ....................................................... */
@@ -228,6 +307,9 @@ ul {list-style-type: none;}
 /*footer*/
 .footer{
   font-size: 2.2vh;
+  position: relative;
+  font-weight: 400;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 

@@ -39,10 +39,10 @@
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Calendar</a>
+                            <a class="nav-link disabled" href="#">Calendar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">To do list</a>
+                            <a class="nav-link disabled" href="#">To do list</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="demo.html">Demo</a>
@@ -64,11 +64,12 @@
     <div class="home-container">
         <div class="home-section">
             <p>Feeling out of time? Not anymore.</p>
-            <button class="home-button">Explore</button>
-            <button class="home-button light">Calendar</button>
+            <button id="explore-button" class="home-button">Explore</button>
+            <button class="home-button light"><a style="text-decoration: none; color:whitesmoke;"
+                    href="demo.html">Calendar</a></button>
         </div>
     </div>
-    <section class="showcase-section">
+    <section id="first-section" class="showcase-section">
         <div class="container-fluid">
 
             <div id="showcase-title-row" class="row">
@@ -80,22 +81,63 @@
                 <div class="col-lg-4">
                 </div>
             </div>
-            <div class="row">
+            <div id="showcase-content-row" class="row">
+
                 <div id="canvas-reference-col" class="col-lg-4">
-                    <h1>Share your little to-do's and enjoy living in the moment</h1>
-                    <p>Let us remind you what is really important and focus less on <b>hard</b> work and more on <b>heart</b> work.</p>
-                    <p> <img src="res/img/planGif.gif" alt="Plan Gif" style="width:90%;height:100%"> </p>
+                    <div id="left-card" class="card m-2">
+                        <div class="card-body">
+
+                            <h1 class="card-title">Share your little to-do's and enjoy living in the moment</h1>
+                            <p>Let us remind you what is really important and focus less on <b>hard</b> work and more on
+                                <b>heart</b> work.
+                            </p>
+                            <p> <img src="res/img/planGif.gif" alt="Plan Gif" width="80%"> </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 mt-auto">
+                <div class="col-lg-4 mt-auto mb-auto">
+                    <h1 class="text-white">Time passes...</h1>
                     <canvas id="showcase-canvas">
 
                     </canvas>
                 </div>
                 <div class="col-lg-4">
-                    <h1>Plan out and free yourself of worries</h1>
-                    <p>Clear your thoughts and yet never miss a deadline. We are here to help you keep track of everything—so you can focus on getting things done. </p>
-                    <p> <img src="res/img/savetimeGif.gif" alt="Save time Gif" style="width: 90%;height:100%"> </p>
+                    <div id="right-card" class="card m-2">
+                        <div class="card-body">
+                            <h1 class="card-title">Plan out and free yourself of worries</h1>
+
+                            <p class="card-text">Clear your thoughts and yet never miss a deadline. We are here to help
+                                you keep track of
+                                everything—so you can focus on getting things done.
+                                We know that time means money, so we are trying to make sure you get the most of it.
+                            </p>
+                            <p> <img src="res/img/savetimeGif.gif" alt="Save time Gif" width="90%">
+                            </p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section id="second-section" class="showcase-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1 id="try-title" class="m-5">Try our tool right now!</h1>
+                </div>
+                <div class="col-sm-4">
+                    <button class="home-button m-5"><a style="text-decoration: none; color:whitesmoke;"
+                            href="demo.html">Calendar</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="third-section" class="showcase-section">
+        <div class="video-container">
+            <video height="auto" width="100%" class="home-video" src="res/video/mic.mp4" autoplay muted loop="true"></video>
+            <div class="on-top-of-video-container">
+                <h1 class="overlay">Speech recognition based planning.</h1>
+                <p class="overlay">For a better user experience!</p>
             </div>
         </div>
     </section>

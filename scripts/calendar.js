@@ -13,7 +13,7 @@ window.onload = () => {
 
     var monthBanner = document.getElementById('monthBanner');
 
-    const images = [];
+    var images = [];
 
     btnNext.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
@@ -52,30 +52,14 @@ window.onload = () => {
     }
 
     function changeBannerImage() {
-        //setInterval(changeBannerSmooth,1000);
-        //var link = "res/img/" + currentDate.getMonth() + ".jpg";
-        //var img = new Image();
-        //img.src = link;
-        //console.log(link);
-        //img.addEventListener('load', function () {
-            //console.log(img.src);
             monthBanner.style.backgroundImage = "url( "+ images[currentDate.getMonth()].src+")";
             monthBanner.style.backgroundSize = "cover";
             monthBanner.style.backgroundPosition = "center";
-            // if (currentDate.getMonth() === 0 || currentDate.getMonth() === 1 || currentDate.getMonth() === 9 || currentDate.getMonth() === 10) {
-            //     $('#calendar-month').css('color', '#EEEBD3');
-            //     $('#calendar-year').css('color', '#EEEBD3');
-            // } else {
-            //     
-            // }$('#calendar-month').css('color', 'black');
-            //     $('#calendar-year').css('color', 'black');
-
             $('#calendar-month').css('color', '#EEEBD3');
             $('#calendar-year').css('color', '#EEEBD3');
             $('#calendar-year').css('font-size', '3.2vh');
             
             $('#monthBanner').fadeIn(1000);
-       // });
 
     }
 

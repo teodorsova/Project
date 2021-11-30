@@ -5,6 +5,8 @@ window.onload = function () {
     var date = 1;
     var firstSquareXPos = 0;
     var counter = 0;
+    var exploreBtn = document.getElementById('explore-button');
+    var firstSection = document.getElementById('first-section');
     canvas.width = col.scrollWidth - 24;
     canvas.height = col.scrollHeight;
 
@@ -165,4 +167,8 @@ window.onload = function () {
         canvas.width = col.scrollWidth;
         canvas.height = window.innerHeight / 6;
     });
+
+    exploreBtn.addEventListener('click', () => {
+        firstSection.scrollIntoView();
+    })
 }
