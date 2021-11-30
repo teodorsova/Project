@@ -13,6 +13,8 @@ window.onload = () => {
 
     var monthBanner = document.getElementById('monthBanner');
 
+    const images = [];
+
     btnNext.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
         changeBannerSmooth();
@@ -36,34 +38,44 @@ window.onload = () => {
         }, 1000)
     })
 
+    function loadImages(){
+        for(let i = 0; i < 12; i++){
+            var link = "res/img/" + i + ".jpg";
+            var img = new Image();
+            img.src = link;
+            images.push(img);
+        }
+    }
+
     function changeBannerSmooth() {
         $('#monthBanner').fadeOut(1000, changeBannerImage);
     }
 
     function changeBannerImage() {
         //setInterval(changeBannerSmooth,1000);
-        var link = "res/img/" + currentDate.getMonth() + ".jpg";
-        var img = new Image();
-        img.src = link;
+        //var link = "res/img/" + currentDate.getMonth() + ".jpg";
+        //var img = new Image();
+        //img.src = link;
         //console.log(link);
-        img.addEventListener('load', function () {
-            console.log(img.src);
-            var link2 = "url(" + img.src + ")";
-            monthBanner.style.backgroundImage = link2;
+        //img.addEventListener('load', function () {
+            //console.log(img.src);
+            monthBanner.style.backgroundImage = "url( "+ images[currentDate.getMonth()].src+")";
             monthBanner.style.backgroundSize = "cover";
             monthBanner.style.backgroundPosition = "center";
-            if (currentDate.getMonth() === 0 || currentDate.getMonth() === 1 || currentDate.getMonth() === 9 || currentDate.getMonth() === 10) {
-                $('#calendar-month').css('color', '#EEEBD3');
-                $('#calendar-year').css('color', '#EEEBD3');
-            } else {
-                $('#calendar-month').css('color', 'black');
-                $('#calendar-year').css('color', 'black');
-            }
+            // if (currentDate.getMonth() === 0 || currentDate.getMonth() === 1 || currentDate.getMonth() === 9 || currentDate.getMonth() === 10) {
+            //     $('#calendar-month').css('color', '#EEEBD3');
+            //     $('#calendar-year').css('color', '#EEEBD3');
+            // } else {
+            //     
+            // }$('#calendar-month').css('color', 'black');
+            //     $('#calendar-year').css('color', 'black');
+
+            $('#calendar-month').css('color', '#EEEBD3');
+            $('#calendar-year').css('color', '#EEEBD3');
+            $('#calendar-year').css('font-size', '3.2vh');
+            
             $('#monthBanner').fadeIn(1000);
-        });
-
-
-
+       // });
 
     }
 
@@ -117,7 +129,7 @@ window.onload = () => {
             counter++;
         }
     }
-
+    loadImages();
     populateCalendar();
     changeBannerImage();
 
